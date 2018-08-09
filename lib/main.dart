@@ -24,6 +24,7 @@ import 'package:flutter_study/widget/demo_localizations/localizations_study.dart
 import 'package:flutter_study/widget/demo_network/network_page.dart';
 import 'package:flutter_study/widget/demo_route/route_page.dart';
 import 'package:flutter_study/widget/demo_route/route_page_with_value_one.dart';
+import 'package:flutter_study/widget/demo_ui_challenge/ui-listview.dart';
 import 'package:flutter_study/widget/home_page.dart';
 //import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
 
@@ -66,5 +67,6 @@ void main() {
     '/CountReduxPage': (BuildContext context) => new NewCountReduxPage(title: 'Flutter Redux Demo'),
     '/ArchitecturePage': (BuildContext context) => new ArchitecturePage(),
     '/ChannelPage': (BuildContext context) => new ChannelPage(),
+    '/Ui': (BuildContext context) => new ListViewPage(title: 'List view page demo'),
   }, home: new HomePage()));
 }
