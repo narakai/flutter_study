@@ -1,4 +1,14 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_study/widget/demo_ui_challenge/WeightListItem.dart';
+
+class WeightSave {
+  DateTime dateTime;
+  double weight;
+
+  WeightSave(this.dateTime, this.weight);
+}
 
 class ListViewPage extends StatefulWidget {
   ListViewPage({Key key, this.title}) : super(key: key);
@@ -11,11 +21,12 @@ class ListViewPage extends StatefulWidget {
 }
 
 class _ListViewState extends State<ListViewPage> {
-  List<String> strings = new List();
+  List<WeightSave> weightSaves = new List();
 
   void _addWeightSave() {
     setState(() {
-      strings.add("new string");
+      weightSaves.add(new WeightSave(
+          new DateTime.now(), new Random().nextInt(100).toDouble()));
     });
   }
 
@@ -26,10 +37,13 @@ class _ListViewState extends State<ListViewPage> {
         title: new Text(widget.title),
       ),
       body: new ListView(
-        children: strings.map((String string) {
-          return new Row(
-            children: [new Text(string)],
-          );
+        children: weightSaves.map((WeightSave weightSave) {
+          //calculating difference
+          double difference = weightSaves.first == weightSave
+              ? 0.0
+              : weightSave.weight -
+                  weightSaves[weightSaves.indexOf(weightSave) - 1].weight;
+          return new WeightListItem(weightSave, difference);
         }).toList(),
       ),
       floatingActionButton: new FloatingActionButton(
