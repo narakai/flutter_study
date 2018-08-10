@@ -2,15 +2,20 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_study/widget/demo_ui_challenge/ui-listview.dart';
+import 'package:flutter_study/widget/demo_ui_challenge/ui-timePicker.dart';
 
 class AddEntryDialog extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return new AddEntryDialogState();
+    return new AddEntryDialogState(new DateTime.now());
   }
 }
 
 class AddEntryDialogState extends State<AddEntryDialog> {
+  DateTime _dateTime = new DateTime.now();
+
+  AddEntryDialogState(this._dateTime);
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -20,7 +25,7 @@ class AddEntryDialogState extends State<AddEntryDialog> {
           new FlatButton(
               onPressed: () {
                 Navigator.of(context).pop(new WeightSave(
-                    new DateTime.now(), new Random().nextInt(100).toDouble()));
+                    _dateTime, new Random().nextInt(100).toDouble()));
               },
               child: new Text(
                 'SAVE',
@@ -32,7 +37,13 @@ class AddEntryDialogState extends State<AddEntryDialog> {
               )),
         ],
       ),
-      body: new Text('Foo'),
+      body: new ListTile(
+        leading: new Icon(Icons.today, color: Colors.grey[500]),
+        title: new DateTimeItem(
+          dateTime: _dateTime,
+          onChanged: (dateTime) => setState(() => _dateTime = dateTime),
+        ),
+      ),
     );
   }
 }
