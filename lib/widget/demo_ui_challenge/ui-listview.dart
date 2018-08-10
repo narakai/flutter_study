@@ -1,7 +1,9 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_study/widget/demo_ui_challenge/WeightListItem.dart';
+import 'package:flutter_study/widget/demo_ui_challenge/ui-dialog.dart';
 
 class WeightSave {
   DateTime dateTime;
@@ -23,11 +25,33 @@ class ListViewPage extends StatefulWidget {
 class _ListViewState extends State<ListViewPage> {
   List<WeightSave> weightSaves = new List();
 
-  void _addWeightSave() {
+  void _addWeightSave(WeightSave save) {
     setState(() {
-      weightSaves.add(new WeightSave(
-          new DateTime.now(), new Random().nextInt(100).toDouble()));
+      weightSaves.add(save);
     });
+  }
+
+//  void _openAddEntryDialog() {
+//    Navigator.of(context).push(new MaterialPageRoute<Null>(
+//        builder: (BuildContext context) {
+//          return new AddEntryDialog();
+//        },
+//        //Setting it up will provide out screen “close symbol” in top left corner instead of a default “back arrow”.
+//        // On the iOS devices it also affects swipe back behavior.
+//        fullscreenDialog: true
+//    ));
+//  }
+
+  Future _openAddEntryDialog() async {
+    WeightSave save =
+        await Navigator.of(context).push(new MaterialPageRoute<WeightSave>(
+            builder: (BuildContext context) {
+              return new AddEntryDialog();
+            },
+            fullscreenDialog: true));
+    if (save != null) {
+      _addWeightSave(save);
+    }
   }
 
   @override
@@ -57,7 +81,8 @@ class _ListViewState extends State<ListViewPage> {
 //        }).toList(),
 //      ),
       floatingActionButton: new FloatingActionButton(
-        onPressed: _addWeightSave,
+//        onPressed: _addWeightSave,
+        onPressed: _openAddEntryDialog,
         tooltip: 'Add new weight entry',
         child: new Icon(Icons.add),
       ),
