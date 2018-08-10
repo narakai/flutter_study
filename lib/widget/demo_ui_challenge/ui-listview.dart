@@ -36,16 +36,26 @@ class _ListViewState extends State<ListViewPage> {
       appBar: new AppBar(
         title: new Text(widget.title),
       ),
-      body: new ListView(
-        children: weightSaves.map((WeightSave weightSave) {
-          //calculating difference
-          double difference = weightSaves.first == weightSave
-              ? 0.0
-              : weightSave.weight -
-                  weightSaves[weightSaves.indexOf(weightSave) - 1].weight;
-          return new WeightListItem(weightSave, difference);
-        }).toList(),
-      ),
+      body: ListView.builder(
+          itemCount: weightSaves.length,
+          itemBuilder: (BuildContext ctx, int index) {
+            var weightSave = weightSaves[index];
+            var difference = weightSaves.first == weightSave
+                ? 0.0
+                : weightSave.weight -
+                    weightSaves[weightSaves.indexOf(weightSave) - 1].weight;
+            return new WeightListItem(weightSave, difference);
+          }),
+//      body: new ListView(
+//        children: weightSaves.map((WeightSave weightSave) {
+//          //calculating difference
+//          double difference = weightSaves.first == weightSave
+//              ? 0.0
+//              : weightSave.weight -
+//                  weightSaves[weightSaves.indexOf(weightSave) - 1].weight;
+//          return new WeightListItem(weightSave, difference);
+//        }).toList(),
+//      ),
       floatingActionButton: new FloatingActionButton(
         onPressed: _addWeightSave,
         tooltip: 'Add new weight entry',
