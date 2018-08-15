@@ -102,14 +102,6 @@ class _DrawerWeigetState extends State<DrawerWeiget> {
               Navigator.pushNamed(context, '/Ui');
             }),
         new Divider(),
-        new ListTile(
-            title: new Text('Dialog 学习'),
-            trailing: new Icon(Icons.arrow_right),
-            onTap: () {
-              Navigator.of(context).pop();
-              Navigator.pushNamed(context, '/Dialog');
-            }),
-        new Divider(),
       ],
     );
   }
