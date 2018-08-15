@@ -18,6 +18,7 @@ dependencies:
   flutter_webview_plugin: ^0.1.6
   flutter_redux: 0.5.2
   rxdart: 0.18.1
+  numberpicker: ^0.1.5
 #  firebase_admob: ^0.5.5
 #  fluttertoast: ^2.0.3
   flutter_localizations:
@@ -45,6 +46,8 @@ flutter:
   assets:
     - images/ic_assignment_ind_36pt.png
     - images/lifecycle.png
+    - images/scale-bathroom.png
+    - images/calendar-clock.png
 
   #  - images/a_dot_ham.jpeg
 

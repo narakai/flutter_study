@@ -254,6 +254,13 @@
             </list>
           </value>
         </entry>
+        <entry key="numberpicker">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/numberpicker-0.1.5/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="package_config">
           <value>
             <list>
@@ -418,7 +425,7 @@
         <entry key="synchronized">
           <value>
             <list>
-              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/synchronized-1.5.1/lib" />
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/synchronized-1.5.1+1/lib" />
             </list>
           </value>
         </entry>
@@ -535,6 +542,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/mime-0.9.6+1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/multi_server_socket-1.0.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/node_preamble-1.4.2/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/numberpicker-0.1.5/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/package_config-1.0.3/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/package_resolver-1.0.3/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/path-1.6.1/lib" />
@@ -557,7 +565,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.9.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/stream_channel-1.6.7+1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.0.2/lib" />
-      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/synchronized-1.5.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/synchronized-1.5.1+1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.0.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/test-0.12.41/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/transparent_image-0.1.0/lib" />
